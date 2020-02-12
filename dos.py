@@ -96,7 +96,7 @@ def write_part_dos(atomic_coor):
         dos = []
         f. readline()
 
-        out1 = str(atomic_coor[i][0][0]) + str(atomic_coor[i][0][1]) + '.dos'
+        out1 = str(atomic_coor[i][0][0]) + '_' + str(atomic_coor[i][0][1]) + '.dos'
         o1 = open(out1, 'w')
 
         for k in range(n_edos):
