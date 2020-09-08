@@ -1,0 +1,12 @@
+SYSTEM = MoS2
+  NPAR = 4
+  ISYM = 2 
+Electronic Relaxation
+  GGA = PE
+  LWAVE = .FALSE.
+  EDIFF  = 0.1E-05
+# ENCUT = 500
+
+# LSORBIT = .TRUE.
+# SAXIS = 0 0 1
+# MAGMOM = 18*0
