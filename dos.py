@@ -95,16 +95,35 @@ def write_part_dos(atomic_coor):
     for i in range(len(atomic_coor)):
         dos = []
         f. readline()
+
+        out1 = str(atomic_coor[i][0][0]) + '_' + str(atomic_coor[i][0][1]) + '.dos'
+        o1 = open(out1, 'w')
+
         for k in range(n_edos):
             line = f.readline(); tmp = line.split()
             dos.append([float(tmp[n]) for n in range(len(tmp))])
+            o1.write('%12.3f' % float(tmp[0]))
+            for j in range(len(tmp) - 1):
+                o1.write('%12.4E' % float(tmp[j+1]))
+            o1.write('\n')
+        o1.close()
+
         for j in range(len(atomic_coor[i]) - 1):
+            out2 = str(atomic_coor[i][j+1][0]) + '_' + str(atomic_coor[i][j+1][1]) + '.dos'
+            o2 = open(out2, 'w')
+
             f. readline()
             for k in range(n_edos):
                 line = f.readline(); tmp = line.split()
                 for l in range(1, len(tmp)):
                     dos[k][l] = dos[k][l] + float(tmp[l])
-                    
+
+                o2.write('%12.3f' % float(tmp[0]))
+                for m in range(len(tmp) - 1):
+                    o2.write('%12.4E' % float(tmp[m+1]))
+                o2.write('\n')                  
+            o2.close()
+  
         out = atomic_coor[i][0][1] + '.sum.dos'
         o = open(out, 'w')
 
